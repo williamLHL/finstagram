@@ -15,3 +15,15 @@ main {
 .finstagram-post {
     margin-bottom: 48px;
   }
+
+h2:hover {
+    color: red;
+  }
+
+a.photo{
+    transition: padding 0.5s;
+}
+
+a.photo:hover {
+    padding: 10px;
+}
