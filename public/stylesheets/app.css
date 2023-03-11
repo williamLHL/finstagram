@@ -6,3 +6,12 @@ header {
 body {
     background-color: whitesmoke;
 }
+
+main {
+    background-color: white;
+    padding: 16px;
+}
+
+.finstagram-post {
+    margin-bottom: 48px;
+  }
