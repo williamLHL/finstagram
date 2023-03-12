@@ -1,5 +1,4 @@
 def fizzbuzztest(n)
-    n = gets.chomp
     while n <= 100
         # Account for failure state when n <= 0.
         if n <= 0
@@ -12,11 +11,11 @@ def fizzbuzztest(n)
         puts "Fizz"
         elsif n % 5 == 0
         puts "Buzz"
-        else n % 3 > 0 || n % 5 > 0
+        elseif n % 3 > 0 || n % 5 > 0
         puts "#{n}"
         end
         n+=1
     end
   end
 
-puts "What's your number?"
+fizzbuzztest(-99)
