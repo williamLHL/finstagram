@@ -11,7 +11,7 @@ def fizzbuzztest(n)
         puts "Fizz"
         elsif n % 5 == 0
         puts "Buzz"
-        elseif n % 3 > 0 || n % 5 > 0
+        elsif n % 3 > 0 || n % 5 > 0
         puts "#{n}"
         end
         n+=1
