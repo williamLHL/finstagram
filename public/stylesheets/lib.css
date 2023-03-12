@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 body, input {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
@@ -67,13 +66,11 @@ main {
 
 .user-info {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .user-info img {
-  width: 50px;
-  border-radius: 50%;
-  border: solid coral 2px;
+  width: 40px;
 }
 
 .user-info h2 {
