@@ -1,18 +1,16 @@
 def fizzbuzz(test)
-  if test % 15 == 0
+  if test % 3 == 0 && test % 5 == 0
     "FizzBuzz"
   elsif test % 3 == 0
     "Fizz"
   elsif test % 5 == 0
     "Buzz"
-  elsif test % 3 > 0
-    "#{test}"
-  elsif test % 5 > 0
+  else test % 3 > 0 || test % 5 > 0
     "#{test}"
   end
 end
 
 get '/' do
-  test = 9
+  test = 29
   fizzbuzz(test)
 end
