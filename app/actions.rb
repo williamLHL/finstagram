@@ -1,16 +1,17 @@
 def fizzbuzz(test)
+  myarray = []
   if test % 3 == 0 && test % 5 == 0
-    "FizzBuzz"
+    "FizzBuzz" && myarray.push("FizzBuzz")
   elsif test % 3 == 0
-    "Fizz"
+    "Fizz" && myarray.push("Fizz")
   elsif test % 5 == 0
-    "Buzz"
+    "Buzz" && myarray.push("Buzz")
   else test % 3 > 0 || test % 5 > 0
-    "#{test}"
+    "#{test}" && myarray.push("#{test}")
   end
+  myarray.to_s
 end
 
-get '/' do
-  test = 29
-  fizzbuzz(test)
+get '/' do 
+  fizzbuzz(15)
 end
