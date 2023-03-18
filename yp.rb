@@ -12,8 +12,13 @@ numkey = {
     9 => ["W","X","Y","Z"]
 }
 
+def processor(input)
+input = input.
+end
+
 if input.length > 10
     then puts "You have exceeded the character limit. Try again."
-elsif input.length <=10 
+elsif input.length <=10
+    # replace with functional method that returns integer values
     then puts "Is this what you typed? #{input}"
 end
