@@ -1,28 +1,13 @@
-puts "Without spaces, type in a 10-character string below:"
-input = gets
-
-# hash for practice
-hash = {
-    2 => ["A","B","C"],
-    3 => ["D","E","F"],
-    4 => ["G","H","I"],
-    5 => ["J","K","L"],
-    6 => ["M","N","O"],
-    7 => ["P","Q","R", "S"],
-    8 => ["T","U","V"],
-    9 => ["W","X","Y","Z"]
-}
-
 def processor(input)
     keyToUser=""
-    # take input string to split values and remove line break for array
-    input.chomp.split("")
-    # assign input into variable array
-    toconvert = input.chomp.split("")
-    # test array
-    puts "#{toconvert}"
+    # take input string to conver to lowercase, split values, and remove line break for array
+    input.downcase.chomp.split("")
+    
+    # assign input into string array
+    toconvert = input.downcase.chomp.split("")
+    
     #convert string array into number array
-    toconvert.each.map do |i|
+    toconvert.each do |i|
         if i=="a"||i=="b"||i=="c"
             then keyToUser+= "2"
         elsif i=="d"||i=="e"||i=="f" 
@@ -41,16 +26,20 @@ def processor(input)
             then keyToUser+="9"
         end
     end
-    # test new array
-    puts "#{keyToUser}"
-    # convert number array back to string
     # print numeric string 
+    puts "Processed. Here is your converted 10-character string: #{keyToUser}"
 end
 
-if input.length > 10
-    then puts "You have exceeded the character limit. Try again."
-elsif input.length <=10
+begin
+    puts "Without spaces, type in a 10-character string below:"
+    input = gets
+    if input.length > 10
+        puts "You have exceeded the character limit. Try again."
+    elsif input.length < 10
+        puts "You have not met the character quota. Try again"
+    end
+    rescue input.length > 10 || input.length < 10
+end until input.length <=10
     # replace with functional method that returns integer values
-    then puts "Is this what you typed? #{input}"
+    puts "Confirming your entry #{input}"
     processor(input)
-end
