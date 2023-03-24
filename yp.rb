@@ -37,9 +37,6 @@ begin
         puts "You have exceeded the character limit. Try again."
     elsif input.length < 10
         puts "You have not met the character quota. Try again"
-    end
-    rescue input.length > 10 || input.length < 10
-end until input.length <=10
-    # replace with functional method that returns integer values
-    puts "Confirming your entry #{input}"
-    processor(input)
+    end until input.length = 10
+        puts "Confirming your entry: #{input}"
+        processor(input)
