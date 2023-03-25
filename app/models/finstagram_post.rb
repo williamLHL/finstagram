@@ -17,4 +17,13 @@ class FinstagramPost < ActiveRecord::Base
         end
       end
 
+    # New Stuff Start 
+    def like_count
+        self.likes.size
+    end
+
+    def comment_count
+        self.comments.size
+    end
+    # New Stuff End
 end
