@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <!-- This is not seen with exception of title tag. -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,700italic,700,300">
+        <link rel="stylesheet" type="text/css" href="../../../stylesheets/unilib.css">
+        <title>Pokégram</title>
+    </head>
+  <body>
+    <header>
+      <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
+      <h1><a href="https://3000-williamlhl-finstagram-0hsb5d9ukw3.ws-us92.gitpod.io/">PoKéGraM</a></h1>
+    </header>  
+    <main role="main">
+      <% @finstagram_posts.each do |finstagram_post| %>
+        <article class="finstagram-post">
+          <div class="user-info">
+            <img src="<%= finstagram_post.user.avatar_url %>" alt="<%= finstagram_post.user.username %>">
+            <h2><%= finstagram_post.user.username %></h2>
+            <h3><%= finstagram_post.humanized_time_ago %></h3>
+          </div>
+          <a class="photo" href="#">
+            <img src="<%= finstagram_post.photo_url %>" alt="finstagram post from <%= finstagram_post.user.username %>">
+          </a>
+          <div class="actions">
+            <%= finstagram_post.like_count %> likes
+            <span class="comment-count"><%= finstagram_post.comment_count %> comments</span>
+          </div>
+          <ul class="comments">
+            <% finstagram_post.comments.each do |comment| %>
+              <li>
+                <p>
+                  <%= comment.user.username %>: <%= comment.text %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+        </article>
+      <% end %>
+    </main>
+  </body>
+</html>

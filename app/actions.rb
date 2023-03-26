@@ -9,7 +9,8 @@ get '/signup' do     # if a user navigates to the path "/signup",
 end
 
 get '/experindex' do
-  File.read(File.join('app/views', 'experindex.html'))
+  @finstagram_posts = FinstagramPost.order(created_at: :desc)
+  erb(:experindex) 
 end
 
 post '/signup' do
