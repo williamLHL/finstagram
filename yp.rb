@@ -33,10 +33,12 @@ end
 begin
     puts "Without spaces, type in a 10-character string below:"
     input = gets
-    if input.length > 10
-        puts "You have exceeded the character limit. Try again."
-    elsif input.length < 10
+    if input.length < 10
         puts "You have not met the character quota. Try again"
-    end until input.length = 10
+    elsif input.length > 10
+        puts "You have exceeded the character limit. Try again."
+    elsif input.length == 10
         puts "Confirming your entry: #{input}"
         processor(input)
+    end
+end
