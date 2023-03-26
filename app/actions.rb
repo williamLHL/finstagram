@@ -8,6 +8,10 @@ get '/signup' do     # if a user navigates to the path "/signup",
   erb(:signup)       # render "app/views/signup.erb"
 end
 
+get '/experindex' do
+  File.read(File.join('app/views', 'experindex.html'))
+end
+
 post '/signup' do
   # grab user input values from params
   email      = params[:email]
