@@ -8,6 +8,10 @@ get '/signup' do     # if a user navigates to the path "/signup",
   erb(:signup)       # render "app/views/signup.erb"
 end
 
+get "/login" do
+  erb(:login)
+end
+
 get '/experindex' do
   @finstagram_posts = FinstagramPost.order(created_at: :desc)
   erb(:experindex) 
