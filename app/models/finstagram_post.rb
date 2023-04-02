@@ -5,7 +5,6 @@ class FinstagramPost < ActiveRecord::Base
     has_many :likes
 
   # validations in between association definitions and methods!
-    validates_presence_of :user
     validates :photo_url, :user, presence: true
 
   # (this is where your def humanized_time_ago method is, along with the rest of your methods in this file)...
