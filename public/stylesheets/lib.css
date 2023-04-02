@@ -38,6 +38,7 @@ header > .login-info {
 main {
   width: 450px;
   margin: 0 auto;
+  background-color: white;
 }
 
 .new-finstagram-post {
