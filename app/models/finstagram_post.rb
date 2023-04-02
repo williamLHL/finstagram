@@ -1,11 +1,14 @@
 class FinstagramPost < ActiveRecord::Base
-
+  # (this is where your associations are, e.g. has_many :finstagram_posts, etc.)...
     belongs_to :user
     has_many :comments
     has_many :likes
 
+  # validations in between association definitions and methods!
     validates_presence_of :user
+    validates :photo_url, :user, presence: true
 
+  # (this is where your def humanized_time_ago method is, along with the rest of your methods in this file)...
     def humanized_time_ago
         time_ago_in_seconds = Time.now - self.created_at
         time_ago_in_minutes = time_ago_in_seconds / 60
